@@ -1,24 +1,28 @@
-```html
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-theme="light">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#08090d">
+    <meta name="theme-color" content="#f7f7f5">
     <meta name="description"
-        content="Vansh Birwal — B.Tech Computer Science student building with Python, web technologies and AI tools.">
-    <title>Vansh Birwal — Developer Portfolio</title>
+        content="Vansh Birwal — B.Tech Computer Science student building with Python, web technologies and exploring AI/ML.">
+    <title>Vansh Birwal — Student Developer</title>
+
     <script>
         document.documentElement.classList.add('js');
         try {
-            document.documentElement.dataset.theme = localStorage.getItem('portfolio_theme') || 'dark';
-        } catch (e) { }
+            document.documentElement.dataset.theme =
+                localStorage.getItem('portfolio_theme') || 'light';
+        } catch (e) {
+            document.documentElement.dataset.theme = 'light';
+        }
     </script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap"
+        href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <link rel="stylesheet" href="style.css">
@@ -26,182 +30,213 @@
 </head>
 
 <body>
-    <div class="page-progress" aria-hidden="true"><span id="progressBar"></span></div>
+    <div class="page-progress"><span id="progressBar"></span></div>
 
-    <div class="preloader" id="preloader" aria-hidden="true">
+    <div class="preloader" id="preloader">
         <div class="loader-mark">VB<span>.</span></div>
         <div class="loader-count"><span id="loaderNum">0</span>%</div>
         <div class="loader-track"><span id="loaderBar"></span></div>
     </div>
 
     <div class="cursor-glow" aria-hidden="true"></div>
-    <div class="custom-cursor" aria-hidden="true"><span></span></div>
 
-    <header class="site-header">
-        <a class="brand" href="#home" aria-label="Vansh Birwal home">VB<span>.</span></a>
+    <header class="site-header" id="top">
+        <a class="brand" href="#home">VB<span>.</span></a>
 
-        <div class="header-controls">
-            <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark or light mode">
-                <i class="fa-solid fa-moon"></i>
-                <i class="fa-solid fa-sun"></i>
-            </button>
-
-            <button class="menu-toggle" id="menuToggle" aria-label="Open navigation" aria-expanded="false">
-                <span></span><span></span>
-            </button>
-        </div>
-
-        <nav class="nav" id="siteNav" aria-label="Main navigation">
+        <nav class="nav" id="siteNav">
             <a href="#about">About</a>
             <a href="#work">Projects</a>
             <a href="#skills">Skills</a>
             <a href="#journey">Journey</a>
             <a href="#certificates">Certificates</a>
-            <a href="#contact" class="nav-contact">Let's talk <span>↗</span></a>
+            <a class="nav-contact" href="#contact">Let's talk <span>↗</span></a>
         </nav>
+
+        <div class="header-controls">
+            <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to dark theme">
+                <i class="fa-solid fa-moon"></i>
+            </button>
+            <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open menu" aria-expanded="false">
+                <span></span><span></span>
+            </button>
+        </div>
     </header>
 
     <main>
         <!-- HERO -->
         <section class="hero section-shell" id="home">
-            <div class="hero-grid"></div>
-
             <div class="hero-copy">
-                <div class="eyebrow h-in">
+                <div class="eyebrow reveal">
                     <span class="status-dot"></span>
                     B.Tech CSE student · Bennett University
                 </div>
 
                 <h1 class="hero-title">
-                    <span class="line"><span class="h-word">I turn ideas</span></span>
-                    <span class="line"><span class="h-word">into <em class="outlined-word">digital</em></span></span>
-                    <span class="line"><span class="h-word gradient-word">experiences.</span></span>
+                    <span class="hero-line"><span>I turn ideas</span></span>
+                    <span class="hero-line"><span>into <em>digital</em></span></span>
+                    <span class="hero-line"><span class="gradient-word">experiences.</span></span>
                 </h1>
 
-                <div class="role-line h-in">
-                    Currently exploring
-                    <span id="roleText">Python development</span>
-                    <i class="typing-caret"></i>
+                <div class="role-line reveal">
+                    Currently exploring <strong id="roleText">Python development</strong>
+                    <span class="typing-caret"></span>
                 </div>
 
-                <p class="hero-description h-in">
+                <p class="hero-description reveal">
                     I'm Vansh — a Computer Science student who learns by building.
-                    I work with Python and the web, and I'm exploring how AI can
-                    make useful products smarter.
+                    I work with Python and the web, and I'm exploring how AI can make
+                    useful products smarter.
                 </p>
 
-                <div class="hero-actions h-in">
-                    <a class="button button-primary magnetic" href="#work">
-                        Explore my work <span>↓</span>
-                    </a>
-                    <a class="text-link magnetic" href="#contact">
-                        Get in touch <span>↗</span>
-                    </a>
+                <div class="hero-actions reveal">
+                    <a class="button button-primary magnetic" href="#work">Explore my work <span>↓</span></a>
+                    <a class="text-link magnetic" href="#contact">Get in touch ↗</a>
                 </div>
 
-                <div class="hero-meta h-in">
+                <div class="hero-meta reveal">
                     <span>Student developer</span>
                     <span>Based in India</span>
                 </div>
             </div>
 
-            <div class="hero-visual h-in" aria-label="Profile visual">
+            <div class="hero-visual reveal">
                 <div class="orbit orbit-one"></div>
                 <div class="orbit orbit-two"></div>
 
                 <div class="profile-frame tilt-card">
-                    <div class="profile-topline">
-                        <span>profile_001</span>
-                        <span>2026</span>
-                    </div>
-
+                    <div class="profile-topline"><span>profile_001</span><span>2026</span></div>
                     <div class="profile-image-wrap">
                         <img src="assets/profile.jpg" alt="Portrait of Vansh Birwal"
-                            onerror="this.style.display='none';this.parentElement.classList.add('image-placeholder');">
-                        <div class="image-fallback">
-                            <span>VB</span>
-                            <small>Add your photo as<br>assets/profile.jpg</small>
-                        </div>
+                            onerror="this.style.display='none';this.parentElement.classList.add('image-placeholder')">
+                        <div class="image-fallback"><b>VB</b><small>Add photo at<br>assets/profile.jpg</small></div>
                     </div>
-
-                    <div class="profile-caption">
-                        <span>Vansh Birwal</span>
-                        <span>Learning in public ↗</span>
-                    </div>
+                    <div class="profile-caption"><span>Vansh Birwal</span><span>Learning in public ↗</span></div>
                 </div>
 
                 <div class="floating-note note-top">
                     <span class="note-icon">✳</span>
                     <span>Always learning<br><b>Always building</b></span>
                 </div>
-
                 <div class="floating-note note-bottom">
                     <span class="note-pulse"></span>
                     <span>Open to learning<br><b>and collaboration</b></span>
                 </div>
             </div>
 
-            <a class="scroll-cue" href="#about">
-                <span class="scroll-wheel"></span> Scroll to explore
-            </a>
+            <a class="scroll-cue" href="#about"><span class="scroll-wheel"></span> Scroll to explore</a>
         </section>
 
-        <!-- SKILLS MARQUEE -->
-        <section class="marquee" aria-hidden="true">
+        <!-- MARQUEE -->
+        <section class="marquee" aria-label="Technologies and interests">
             <div class="marquee-track">
                 <span>Python</span><span>JavaScript</span><span>HTML5</span><span>CSS3</span>
-                <span>AI tools</span><span>Problem solving</span><span>Web design</span><span>Digital electronics</span>
+                <span>AI tools</span><span>Problem solving</span><span>Web design</span>
+                <span>Digital electronics</span>
                 <span>Python</span><span>JavaScript</span><span>HTML5</span><span>CSS3</span>
-                <span>AI tools</span><span>Problem solving</span><span>Web design</span><span>Digital electronics</span>
+                <span>AI tools</span><span>Problem solving</span><span>Web design</span>
+                <span>Digital electronics</span>
+            </div>
+        </section>
+
+        <!-- INTERACTIVE DOORS -->
+        <section class="doors-section section-pad" id="explore">
+            <div class="section-shell">
+                <div class="section-label"><span>Explore my world</span></div>
+                <div class="doors-heading">
+                    <div>
+                        <h2 class="section-heading reveal">Step inside.<br><span class="muted-heading">Explore what I
+                                do.</span></h2>
+                        <p class="doors-subtitle reveal">Four doors. Four parts of my journey. Open one to explore.</p>
+                    </div>
+                    <span class="doors-hint">CLICK A DOOR ↗</span>
+                </div>
+
+                <div class="doors-grid">
+                    <article class="door-scene reveal">
+                        <div class="door-room">
+                            <span class="room-number">ROOM 01</span>
+                            <i class="fa-regular fa-user room-icon"></i>
+                            <h3>About me</h3>
+                            <p>The person behind the projects. My education, interests and journey.</p>
+                            <a href="#about" class="room-link">Enter room ↗</a>
+                        </div>
+                        <button class="door-leaf" type="button" aria-expanded="false">
+                            <span class="door-number">01 / 04</span><span class="door-symbol">✳</span>
+                            <span class="door-name">ABOUT</span><span class="door-bottom">GET TO KNOW ME ↗</span>
+                            <span class="door-knob"></span>
+                        </button>
+                    </article>
+
+                    <article class="door-scene reveal">
+                        <div class="door-room">
+                            <span class="room-number">ROOM 02</span>
+                            <i class="fa-solid fa-code room-icon"></i>
+                            <h3>My projects</h3>
+                            <p>Ideas turned into websites, experiments and practical applications.</p>
+                            <a href="#work" class="room-link">View projects ↗</a>
+                        </div>
+                        <button class="door-leaf" type="button" aria-expanded="false">
+                            <span class="door-number">02 / 04</span><span class="door-symbol">⌘</span>
+                            <span class="door-name">PROJECTS</span><span class="door-bottom">EXPLORE MY WORK ↗</span>
+                            <span class="door-knob"></span>
+                        </button>
+                    </article>
+
+                    <article class="door-scene reveal">
+                        <div class="door-room">
+                            <span class="room-number">ROOM 03</span>
+                            <i class="fa-solid fa-microchip room-icon"></i>
+                            <h3>My toolkit</h3>
+                            <p>Programming languages, development tools and technologies I'm learning.</p>
+                            <a href="#skills" class="room-link">Explore skills ↗</a>
+                        </div>
+                        <button class="door-leaf" type="button" aria-expanded="false">
+                            <span class="door-number">03 / 04</span><span class="door-symbol">⌘</span>
+                            <span class="door-name">SKILLS</span><span class="door-bottom">MY TOOLKIT ↗</span>
+                            <span class="door-knob"></span>
+                        </button>
+                    </article>
+
+                    <article class="door-scene reveal">
+                        <div class="door-room">
+                            <span class="room-number">ROOM 04</span>
+                            <i class="fa-solid fa-award room-icon"></i>
+                            <h3>Achievements</h3>
+                            <p>Courses, academic achievements and certificates I've earned.</p>
+                            <a href="#certificates" class="room-link">View certificates ↗</a>
+                        </div>
+                        <button class="door-leaf" type="button" aria-expanded="false">
+                            <span class="door-number">04 / 04</span><span class="door-symbol">✧</span>
+                            <span class="door-name">AWARDS</span><span class="door-bottom">MY ACHIEVEMENTS ↗</span>
+                            <span class="door-knob"></span>
+                        </button>
+                    </article>
+                </div>
+                <p class="doors-footer"><span class="status-dot"></span> Open a door to discover more</p>
             </div>
         </section>
 
         <!-- ABOUT -->
         <section class="intro section-shell section-pad" id="about">
             <div class="section-label"><span>About</span></div>
-
             <div class="intro-layout">
-                <h2 class="section-heading reveal">
-                    A student today.<br>
-                    <span class="muted-heading">An engineer in the making.</span>
-                </h2>
-
-                <div class="intro-copy reveal" style="--d:1">
-                    <p>
-                        I'm pursuing a B.Tech in Computer Science and Engineering at
-                        Bennett University. I enjoy understanding how things work,
-                        experimenting with code, and turning what I learn into small,
-                        practical projects.
-                    </p>
-                    <p>
-                        My foundation is in Python, HTML, CSS and JavaScript. I'm also
-                        learning to use modern AI tools thoughtfully as part of my
-                        workflow, while building the fundamentals that matter.
-                    </p>
+                <h2 class="section-heading reveal">A student today.<br><span class="muted-heading">An engineer in the
+                        making.</span></h2>
+                <div class="intro-copy reveal">
+                    <p>I'm pursuing a B.Tech in Computer Science and Engineering at Bennett University. I enjoy
+                        understanding how things work, experimenting with code, and turning what I learn into small,
+                        practical projects.</p>
+                    <p>My foundation is in Python, HTML, CSS and JavaScript. I'm also learning to use modern AI tools
+                        thoughtfully as part of my workflow, while building the fundamentals that matter.</p>
                     <a class="arrow-link" href="https://www.linkedin.com/in/vansh-birwal-657496434/" target="_blank"
-                        rel="noopener noreferrer">
-                        More about my journey on LinkedIn <span>↗</span>
-                    </a>
+                        rel="noopener noreferrer">More about my journey on LinkedIn ↗</a>
                 </div>
             </div>
-
             <div class="stats-row">
-                <div class="stat reveal">
-                    <strong data-count="1">1</strong>
-                    <span>Year · B.Tech CSE</span>
-                </div>
-                <div class="stat reveal" style="--d:1">
-                    <strong data-count="8">8</strong>
-                    <span>Certificates earned</span>
-                </div>
-                <div class="stat reveal" style="--d:2">
-                    <strong data-count="2">2</strong>
-                    <span>Projects built</span>
-                </div>
-                <div class="stat reveal" style="--d:3">
-                    <strong>∞</strong>
-                    <span>Things to learn</span>
-                </div>
+                <div class="stat reveal"><strong>1</strong><span>Year · B.Tech CSE</span></div>
+                <div class="stat reveal"><strong>8</strong><span>Certificates earned</span></div>
+                <div class="stat reveal"><strong>2</strong><span>Projects built</span></div>
+                <div class="stat reveal"><strong>∞</strong><span>Things to learn</span></div>
             </div>
         </section>
 
@@ -209,126 +244,80 @@
         <section class="work-section section-pad" id="work">
             <div class="section-shell">
                 <div class="section-label"><span>Selected work</span></div>
-
                 <div class="section-heading-row">
-                    <h2 class="section-heading reveal">
-                        Small steps.<br>
-                        <span class="muted-heading">Real things built.</span>
-                    </h2>
-                    <p class="section-side-copy reveal" style="--d:1">
-                        A growing collection of experiments and projects.
-                        Each one is a chance to learn something new.
-                    </p>
+                    <h2 class="section-heading reveal">Small steps.<br><span class="muted-heading">Real things
+                            built.</span></h2>
+                    <p class="section-side-copy reveal">A growing collection of experiments and projects. Each one is a
+                        chance to learn something new.</p>
                 </div>
 
                 <div class="project-list">
-                    <div class="reveal">
-                        <article class="project-card project-feature tilt-card">
-                            <div class="project-visual smartdeal-visual">
-                                <div class="browser-bar">
-                                    <span></span><span></span><span></span>
-                                    <i>smartdeal.app</i>
-                                </div>
-
-                                <div class="mock-shop">
-                                    <div class="mock-shop-title">
-                                        Find the best deal<span>✳</span>
+                    <article class="project-card project-feature tilt-card reveal">
+                        <div class="project-visual smartdeal-visual">
+                            <div class="browser-bar"><span></span><span></span><span></span><i>smartdeal.app</i></div>
+                            <div class="mock-shop">
+                                <div class="mock-shop-title">Find the best deal <span>✳</span></div>
+                                <div class="mock-search">Search a product... <b>⌕</b></div>
+                                <div class="mock-products">
+                                    <div class="mock-product">
+                                        <div class="mock-product-art phone-art"></div>
+                                        <small>Smartphone</small><b>₹24,499</b>
                                     </div>
-                                    <div class="mock-search">
-                                        Search a product... <b>⌕</b>
+                                    <div class="mock-product">
+                                        <div class="mock-product-art laptop-art"></div>
+                                        <small>Laptop</small><b>₹57,999</b>
                                     </div>
-
-                                    <div class="mock-products">
-                                        <div class="mock-product">
-                                            <div class="mock-product-art phone-art"></div>
-                                            <small>Smartphone</small>
-                                            <b>₹24,499</b>
-                                        </div>
-                                        <div class="mock-product">
-                                            <div class="mock-product-art laptop-art"></div>
-                                            <small>Laptop</small>
-                                            <b>₹57,999</b>
-                                        </div>
-                                        <div class="mock-product">
-                                            <div class="mock-product-art audio-art"></div>
-                                            <small>Headphones</small>
-                                            <b>₹2,199</b>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <span class="visual-stamp">Live project</span>
-                            </div>
-
-                            <div class="project-info">
-                                <div>
-                                    <span class="project-number">Featured project</span>
-                                    <h3>SmartDeal</h3>
-                                    <p>
-                                        A price-comparison website that helps shoppers compare
-                                        product listings across stores and find better deals.
-                                        Built with HTML, CSS and JavaScript.
-                                    </p>
-                                </div>
-
-                                <div class="project-bottom">
-                                    <div class="tag-list">
-                                        <span>HTML</span><span>CSS</span><span>JavaScript</span>
-                                    </div>
-                                    <a href="https://vanshbirwal.github.io/smart-deal/" target="_blank"
-                                        rel="noopener noreferrer" class="project-status">
-                                        Live demo ↗
-                                    </a>
-                                </div>
-                            </div>
-                        </article>
-                    </div>
-
-                    <div class="project-pair single-item-center reveal">
-                        <article class="project-card tilt-card">
-                            <div class="project-visual guess-visual">
-                                <div class="terminal-window">
-                                    <div class="terminal-head">
-                                        <span></span><span></span><span></span>
-                                        <b>python · terminal</b>
-                                    </div>
-
-                                    <div class="terminal-content">
-                                        <p><i>&gt;&gt;&gt; </i>python guess_game.py</p>
-                                        <p>Think of a number between 1–100.</p>
-                                        <p><i>&gt;&gt;&gt; </i>42</p>
-                                        <p class="terminal-success">That's too low. Try again!</p>
-                                        <p><i>&gt;&gt;&gt; </i>67</p>
-                                        <p class="terminal-win">Correct! You got it. ✓</p>
-                                        <div class="terminal-cursor"></div>
+                                    <div class="mock-product">
+                                        <div class="mock-product-art audio-art"></div>
+                                        <small>Headphones</small><b>₹2,199</b>
                                     </div>
                                 </div>
                             </div>
+                            <span class="visual-stamp">Live project</span>
+                        </div>
+                        <div class="project-info">
+                            <div><span class="project-number">FEATURED PROJECT</span>
+                                <h3>SmartDeal</h3>
+                                <p>A price-comparison website that helps shoppers compare product listings across stores
+                                    and find better deals. Built with HTML, CSS and JavaScript.</p>
+                            </div>
+                            <div class="project-bottom">
+                                <div class="tag-list"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+                                <a href="https://vanshbirwal.github.io/smart-deal/" target="_blank"
+                                    rel="noopener noreferrer" class="project-status">Live demo ↗</a>
+                            </div>
+                        </div>
+                    </article>
 
-                            <div class="project-info">
-                                <div>
-                                    <span class="project-number">Python project</span>
-                                    <h3>Number Guessing Game</h3>
-                                    <p>
-                                        A beginner Python game using random numbers, user input,
-                                        conditional logic and feedback loops.
-                                    </p>
-                                </div>
-
-                                <div class="project-bottom">
-                                    <div class="tag-list">
-                                        <span>Python</span><span>Logic</span>
-                                    </div>
-                                    <span class="project-status">Built ✓</span>
+                    <article class="project-card tilt-card reveal">
+                        <div class="project-visual guess-visual">
+                            <div class="terminal-window">
+                                <div class="terminal-head"><span></span><span></span><span></span><b>python ·
+                                        terminal</b></div>
+                                <div class="terminal-content">
+                                    <p><i>&gt;&gt;&gt;</i> python guess_game.py</p>
+                                    <p>Think of a number between 1–100.</p>
+                                    <p><i>&gt;&gt;&gt;</i> 42</p>
+                                    <p class="terminal-success">That's too low. Try again!</p>
+                                    <p><i>&gt;&gt;&gt;</i> 67</p>
+                                    <p class="terminal-win">Correct! You got it. ✓</p>
                                 </div>
                             </div>
-                        </article>
-                    </div>
+                        </div>
+                        <div class="project-info">
+                            <div><span class="project-number">PYTHON PROJECT</span>
+                                <h3>Number Guessing Game</h3>
+                                <p>A beginner Python game using random numbers, user input, conditional logic and
+                                    feedback loops.</p>
+                            </div>
+                            <div class="project-bottom">
+                                <div class="tag-list"><span>Python</span><span>Logic</span></div>
+                                <span class="project-status">Built ✓</span>
+                            </div>
+                        </div>
+                    </article>
                 </div>
-
-                <p class="project-note reveal">
-                    More projects will be added as I build, learn and improve.
-                </p>
+                <p class="project-note reveal">More projects will be added as I build, learn and improve.</p>
             </div>
         </section>
 
@@ -336,59 +325,39 @@
         <section class="skills-section section-pad" id="skills">
             <div class="section-shell">
                 <div class="section-label"><span>Toolkit</span></div>
-
                 <div class="section-heading-row">
-                    <h2 class="section-heading reveal">
-                        Learning the tools<br>
-                        <span class="muted-heading">behind the ideas.</span>
-                    </h2>
-                    <p class="section-side-copy reveal" style="--d:1">
-                        The technologies and tools I'm learning and using right now.
-                        The list will grow with my experience.
-                    </p>
+                    <h2 class="section-heading reveal">Learning the tools<br><span class="muted-heading">behind the
+                            ideas.</span></h2>
+                    <p class="section-side-copy reveal">The technologies and tools I'm learning and using right now. The
+                        list will grow with my experience.</p>
                 </div>
-
                 <div class="toolkit-grid">
-                    <div class="toolkit-card toolkit-main reveal">
-                        <span class="toolkit-index">Programming</span>
+                    <article class="toolkit-card toolkit-main reveal">
+                        <span class="toolkit-index">PROGRAMMING</span>
                         <div class="toolkit-icon">⌘</div>
                         <h3>Core development</h3>
                         <div class="tool-tags">
-                            <span>Python</span><span>JavaScript</span><span>HTML5</span><span>CSS3</span>
-                        </div>
-                        <p>
-                            Building programming fundamentals, interactive web pages
-                            and small applications.
-                        </p>
-                    </div>
-
-                    <div class="toolkit-card reveal" style="--d:1">
-                        <span class="toolkit-index">AI workflow</span>
+                            <span>Python</span><span>JavaScript</span><span>HTML5</span><span>CSS3</span></div>
+                        <p>Building programming fundamentals, interactive web pages and small applications.</p>
+                    </article>
+                    <article class="toolkit-card reveal">
+                        <span class="toolkit-index">AI WORKFLOW</span>
                         <div class="toolkit-icon">✳</div>
                         <h3>AI tools</h3>
                         <div class="tool-tags">
-                            <span>ChatGPT</span><span>Gemini</span><span>Claude</span>
-                            <span>NotebookLM</span><span>AI Studio</span><span>Julius AI</span>
-                        </div>
-                        <p>
-                            Exploring AI-assisted research, ideation and productivity
-                            alongside strong fundamentals.
-                        </p>
-                    </div>
-
-                    <div class="toolkit-card reveal" style="--d:2">
-                        <span class="toolkit-index">Current focus</span>
+                            <span>ChatGPT</span><span>Gemini</span><span>Claude</span><span>NotebookLM</span><span>AI
+                                Studio</span><span>Julius AI</span></div>
+                        <p>Exploring AI-assisted research, ideation and productivity alongside strong fundamentals.</p>
+                    </article>
+                    <article class="toolkit-card reveal">
+                        <span class="toolkit-index">CURRENT FOCUS</span>
                         <div class="toolkit-icon">↗</div>
                         <h3>Growing next</h3>
-                        <div class="tool-tags">
-                            <span>Problem solving</span><span>OOP</span><span>APIs</span>
-                            <span>Databases</span><span>AI / ML foundations</span>
-                        </div>
-                        <p>
-                            Strengthening fundamentals before moving into more
-                            advanced engineering projects.
-                        </p>
-                    </div>
+                        <div class="tool-tags"><span>Problem
+                                solving</span><span>OOP</span><span>APIs</span><span>Databases</span><span>AI / ML
+                                foundations</span></div>
+                        <p>Strengthening fundamentals before moving into more advanced engineering projects.</p>
+                    </article>
                 </div>
             </div>
         </section>
@@ -397,55 +366,37 @@
         <section class="journey-section section-pad" id="journey">
             <div class="section-shell">
                 <div class="section-label"><span>Journey</span></div>
-
                 <div class="journey-layout">
                     <div class="journey-sticky">
-                        <h2 class="section-heading reveal">
-                            Progress is<br><span class="muted-heading">the point.</span>
+                        <h2 class="section-heading reveal">Progress is<br><span class="muted-heading">the point.</span>
                         </h2>
-                        <p>
-                            Every course, concept and project adds another layer
-                            to the foundation.
-                        </p>
+                        <p>Every course, concept and project adds another layer to the foundation.</p>
                         <div class="journey-year" id="journeyYear">2026</div>
                     </div>
-
                     <div class="journey-items">
                         <article class="journey-item reveal" data-year="2026">
-                            <span class="journey-date">2026 — Present</span>
+                            <span class="journey-date">2026 — PRESENT</span>
                             <h3>B.Tech Computer Science &amp; Engineering</h3>
-                            <p>
-                                Bennett University · Building foundations in computer
-                                science, programming and web development while exploring AI/ML.
-                            </p>
+                            <p>Bennett University · Building foundations in computer science, programming and web
+                                development while exploring AI/ML.</p>
                         </article>
-
                         <article class="journey-item reveal" data-year="2026">
-                            <span class="journey-date">2026 — Project building</span>
+                            <span class="journey-date">2026 — PROJECT BUILDING</span>
                             <h3>Learning by making</h3>
-                            <p>
-                                Working on Python and frontend projects, including
-                                the SmartDeal price-comparison website.
-                            </p>
+                            <p>Working on Python and frontend projects, including the SmartDeal price-comparison
+                                website.</p>
                         </article>
-
                         <article class="journey-item reveal" data-year="2025">
                             <span class="journey-date">2025 — 2026</span>
                             <h3>Learning and certifications</h3>
-                            <p>
-                                Completed introductory learning in Python, HTML &amp; CSS,
-                                MATLAB and digital electronics, and explored AI productivity
-                                tools through a be10x course.
-                            </p>
+                            <p>Completed introductory learning in Python, HTML &amp; CSS, MATLAB and digital
+                                electronics, and explored AI productivity tools through a BE10X course.</p>
                         </article>
-
                         <article class="journey-item reveal" data-year="2024">
                             <span class="journey-date">2023 — 2024</span>
                             <h3>School foundation</h3>
-                            <p>
-                                Completed secondary education and began building
-                                an interest in technology and problem-solving.
-                            </p>
+                            <p>Completed secondary education and began building an interest in technology and
+                                problem-solving.</p>
                         </article>
                     </div>
                 </div>
@@ -456,15 +407,10 @@
         <section class="certificate-section section-pad" id="certificates">
             <div class="section-shell">
                 <div class="section-label"><span>Achievements</span></div>
-
-                <h2 class="section-heading reveal">
-                    Certificates &amp; <span class="muted-heading">credentials.</span>
+                <h2 class="section-heading reveal">Certificates &amp; <span class="muted-heading">credentials.</span>
                 </h2>
-
-                <p class="certificate-description reveal" style="--d:1">
-                    Certifications, academic results and the courses that built
-                    my foundation. Tap any card to open the PDF.
-                </p>
+                <p class="certificate-description reveal">Certifications, academic results and the courses that built my
+                    foundation. Select any card to open its PDF.</p>
 
                 <div class="filters reveal" role="group" aria-label="Filter certificates">
                     <button class="chip active" data-filter="all">All <b>8</b></button>
@@ -474,77 +420,54 @@
                 </div>
 
                 <div class="certificate-grid" id="certGrid">
-                    <button type="button" class="certificate-card reveal" data-cat="ai" data-pdf="assets/be10x.pdf"
-                        data-title="BE10X Certification">
-                        <span class="certificate-number">01</span>
-                        <span class="certificate-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></span>
+                    <a href="assets/be10x.pdf" target="_blank" rel="noopener" class="certificate-card reveal"
+                        data-cat="ai"><span class="certificate-number">01</span><span class="cert-icon"><i
+                                class="fa-solid fa-wand-magic-sparkles"></i></span>
                         <h3>BE10X Certification</h3>
-                        <p>AI Tools &amp; Productivity</p>
-                        <span class="certificate-link">Preview PDF ↗</span>
-                    </button>
-
-                    <button type="button" class="certificate-card reveal" data-cat="academic"
-                        data-pdf="assets/class10.pdf" data-title="Class 10 Academic Record">
-                        <span class="certificate-number">02</span>
-                        <span class="certificate-icon"><i class="fa-solid fa-school"></i></span>
+                        <p>AI Tools &amp; Productivity</p><span class="certificate-link">View certificate ↗</span>
+                    </a>
+                    <a href="assets/class10.pdf" target="_blank" rel="noopener" class="certificate-card reveal"
+                        data-cat="academic"><span class="certificate-number">02</span><span class="cert-icon"><i
+                                class="fa-solid fa-graduation-cap"></i></span>
                         <h3>Class 10</h3>
-                        <p>Academic Achievement · 93.4%</p>
-                        <span class="certificate-link">Preview PDF ↗</span>
-                    </button>
-
-                    <button type="button" class="certificate-card reveal" data-cat="academic"
-                        data-pdf="assets/class12.pdf" data-title="Class 12 Academic Record">
-                        <span class="certificate-number">03</span>
-                        <span class="certificate-icon"><i class="fa-solid fa-graduation-cap"></i></span>
+                        <p>Academic Achievement · 93.4%</p><span class="certificate-link">View certificate ↗</span>
+                    </a>
+                    <a href="assets/class12.pdf" target="_blank" rel="noopener" class="certificate-card reveal"
+                        data-cat="academic"><span class="certificate-number">03</span><span class="cert-icon"><i
+                                class="fa-solid fa-award"></i></span>
                         <h3>Class 12</h3>
-                        <p>Academic Achievement · 90.2%</p>
-                        <span class="certificate-link">Preview PDF ↗</span>
-                    </button>
-
-                    <button type="button" class="certificate-card reveal" data-cat="tech"
-                        data-pdf="assets/digital-design-standard.pdf" data-title="Digital Design Standard">
-                        <span class="certificate-number">04</span>
-                        <span class="certificate-icon"><i class="fa-solid fa-award"></i></span>
+                        <p>Academic Achievement · 90.2%</p><span class="certificate-link">View certificate ↗</span>
+                    </a>
+                    <a href="assets/digital-design-standard.pdf" target="_blank" rel="noopener"
+                        class="certificate-card reveal" data-cat="tech"><span class="certificate-number">04</span><span
+                            class="cert-icon"><i class="fa-solid fa-microchip"></i></span>
                         <h3>Digital Design Standard</h3>
-                        <p>Digital Electronics</p>
-                        <span class="certificate-link">Preview PDF ↗</span>
-                    </button>
-
-                    <button type="button" class="certificate-card reveal" data-cat="tech"
-                        data-pdf="assets/digital-design.pdf" data-title="Digital Design">
-                        <span class="certificate-number">05</span>
-                        <span class="certificate-icon"><i class="fa-solid fa-pen-ruler"></i></span>
+                        <p>Digital Electronics</p><span class="certificate-link">View certificate ↗</span>
+                    </a>
+                    <a href="assets/digital-design.pdf" target="_blank" rel="noopener" class="certificate-card reveal"
+                        data-cat="tech"><span class="certificate-number">05</span><span class="cert-icon"><i
+                                class="fa-solid fa-diagram-project"></i></span>
                         <h3>Digital Design</h3>
-                        <p>Digital Electronics</p>
-                        <span class="certificate-link">Preview PDF ↗</span>
-                    </button>
-
-                    <button type="button" class="certificate-card reveal" data-cat="tech" data-pdf="assets/html-css.pdf"
-                        data-title="HTML &amp; CSS">
-                        <span class="certificate-number">06</span>
-                        <span class="certificate-icon"><i class="fa-brands fa-html5"></i></span>
+                        <p>Digital Electronics</p><span class="certificate-link">View certificate ↗</span>
+                    </a>
+                    <a href="assets/html-css.pdf" target="_blank" rel="noopener" class="certificate-card reveal"
+                        data-cat="tech"><span class="certificate-number">06</span><span class="cert-icon"><i
+                                class="fa-brands fa-html5"></i></span>
                         <h3>HTML &amp; CSS</h3>
-                        <p>Web Development</p>
-                        <span class="certificate-link">Preview PDF ↗</span>
-                    </button>
-
-                    <button type="button" class="certificate-card reveal" data-cat="tech" data-pdf="assets/matlab.pdf"
-                        data-title="MATLAB">
-                        <span class="certificate-number">07</span>
-                        <span class="certificate-icon"><i class="fa-solid fa-calculator"></i></span>
+                        <p>Web Development</p><span class="certificate-link">View certificate ↗</span>
+                    </a>
+                    <a href="assets/matlab.pdf" target="_blank" rel="noopener" class="certificate-card reveal"
+                        data-cat="tech"><span class="certificate-number">07</span><span class="cert-icon"><i
+                                class="fa-solid fa-chart-line"></i></span>
                         <h3>MATLAB</h3>
-                        <p>Technical Certification</p>
-                        <span class="certificate-link">Preview PDF ↗</span>
-                    </button>
-
-                    <button type="button" class="certificate-card reveal" data-cat="tech" data-pdf="assets/python.pdf"
-                        data-title="Python">
-                        <span class="certificate-number">08</span>
-                        <span class="certificate-icon"><i class="fa-brands fa-python"></i></span>
+                        <p>Technical Certification</p><span class="certificate-link">View certificate ↗</span>
+                    </a>
+                    <a href="assets/python.pdf" target="_blank" rel="noopener" class="certificate-card reveal"
+                        data-cat="tech"><span class="certificate-number">08</span><span class="cert-icon"><i
+                                class="fa-brands fa-python"></i></span>
                         <h3>Python</h3>
-                        <p>Programming &amp; Development</p>
-                        <span class="certificate-link">Preview PDF ↗</span>
-                    </button>
+                        <p>Programming &amp; Development</p><span class="certificate-link">View certificate ↗</span>
+                    </a>
                 </div>
             </div>
         </section>
@@ -553,53 +476,21 @@
         <section class="contact-section section-pad" id="contact">
             <div class="section-shell contact-panel">
                 <div class="section-label"><span>What's next</span></div>
-
-                <p class="contact-overline reveal">
-                    Have an idea, an opportunity, or just want to connect?
-                </p>
-
-                <h2 class="contact-title reveal">
-                    Let's make<br><span class="gradient-word">something useful.</span>
-                </h2>
-
-                <a class="contact-email magnetic reveal" href="mailto:vanshbirwal@gmail.com">
-                    vanshbirwal@gmail.com <span>↗</span>
-                </a>
-
+                <p class="contact-overline reveal">Have an idea, an opportunity, or just want to connect?</p>
+                <h2 class="contact-title reveal">Let's make<br><span class="gradient-word">something useful.</span></h2>
+                <a class="contact-email magnetic reveal" href="mailto:birwal296@gmail.com">birwal296@gmail.com
+                    <span>↗</span></a>
                 <div class="social-links reveal">
+                    <a href="https://wa.me/917082836826" target="_blank" rel="noopener noreferrer"><i
+                            class="fa-brands fa-whatsapp"></i> WhatsApp</a>
                     <a href="https://www.linkedin.com/in/vansh-birwal-657496434/" target="_blank"
-                        rel="noopener noreferrer" aria-label="LinkedIn">
-                        <i class="fa-brands fa-linkedin"></i> LinkedIn
-                    </a>
-
-                    <a href="https://www.instagram.com/vnshbirwal" target="_blank" rel="noopener noreferrer"
-                        aria-label="Instagram">
-                        <i class="fa-brands fa-instagram"></i> Instagram
-                    </a>
+                        rel="noopener noreferrer"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+                    <a href="https://www.instagram.com/vnshbirwal" target="_blank" rel="noopener noreferrer"><i
+                            class="fa-brands fa-instagram"></i> Instagram</a>
                 </div>
             </div>
         </section>
     </main>
-
-    <!-- PDF PREVIEW MODAL -->
-    <div class="pdf-modal" id="pdfModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="pdfTitle">
-        <div class="pdf-container">
-            <div class="pdf-header">
-                <div>
-                    <span class="modal-kicker">CERTIFICATE PREVIEW</span>
-                    <h3 id="pdfTitle">Certificate</h3>
-                </div>
-
-                <div class="pdf-controls">
-                    <a id="downloadLink" class="button button-primary" href="#" target="_blank" rel="noopener">Open PDF
-                        ↗</a>
-                    <button class="pdf-close" id="pdfClose" type="button" aria-label="Close preview">×</button>
-                </div>
-            </div>
-
-            <iframe id="pdfFrame" title="Certificate PDF preview" src=""></iframe>
-        </div>
-    </div>
 
     <footer class="footer section-shell">
         <a class="brand" href="#home">VB<span>.</span></a>

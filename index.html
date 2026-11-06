@@ -3,14 +3,14 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <meta name="theme-color" content="#f7f7f5">
     <meta name="description"
         content="Vansh Birwal — B.Tech Computer Science student building with Python, web technologies and exploring AI/ML.">
     <title>Vansh Birwal — Student Developer</title>
 
     <script>
-        document.documentElement.classList.add('js');
+        document.documentElement.classList.add('js', 'loading');
         try {
             document.documentElement.dataset.theme =
                 localStorage.getItem('portfolio_theme') || 'light';
@@ -30,6 +30,7 @@
 </head>
 
 <body>
+    <a class="skip-link" href="#about">Skip to content</a>
     <div class="page-progress"><span id="progressBar"></span></div>
 
     <div class="preloader" id="preloader">
@@ -38,6 +39,8 @@
         <div class="loader-track"><span id="loaderBar"></span></div>
     </div>
 
+    <div class="cursor-ring" aria-hidden="true"><span class="cursor-label"></span></div>
+    <div class="cursor-dot" aria-hidden="true"></div>
     <div class="cursor-glow" aria-hidden="true"></div>
 
     <header class="site-header" id="top">
@@ -103,10 +106,11 @@
                 <div class="orbit orbit-one"></div>
                 <div class="orbit orbit-two"></div>
 
-                <div class="profile-frame tilt-card">
+                <div class="profile-frame tilt-card" data-rot="1.5">
                     <div class="profile-topline"><span>profile_001</span><span>2026</span></div>
                     <div class="profile-image-wrap">
-                        <img src="assets/profile.jpg" alt="Portrait of Vansh Birwal"
+                        <img src="assets/profile.jpg" alt="Portrait of Vansh Birwal" fetchpriority="high"
+                            decoding="async"
                             onerror="this.style.display='none';this.parentElement.classList.add('image-placeholder')">
                         <div class="image-fallback"><b>VB</b><small>Add photo at<br>assets/profile.jpg</small></div>
                     </div>
@@ -478,8 +482,8 @@
                 <div class="section-label"><span>What's next</span></div>
                 <p class="contact-overline reveal">Have an idea, an opportunity, or just want to connect?</p>
                 <h2 class="contact-title reveal">Let's make<br><span class="gradient-word">something useful.</span></h2>
-                <a class="contact-email magnetic reveal" href="mailto:birwal296@gmail.com">birwal296@gmail.com
-                    <span>↗</span></a>
+                <div class="reveal"><a class="contact-email magnetic"
+                        href="mailto:birwal296@gmail.com">birwal296@gmail.com <span>↗</span></a></div>
                 <div class="social-links reveal">
                     <a href="https://wa.me/917082836826" target="_blank" rel="noopener noreferrer"><i
                             class="fa-brands fa-whatsapp"></i> WhatsApp</a>
